@@ -1,0 +1,16 @@
+[
+{
+  "modid": "bedpatch",
+  "name": "Bed Patch",
+  "description": "Quick fix for the stuck in bed issue.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Mordenkainen3141"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
