@@ -10,10 +10,6 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the nessasary things for Forge to be setup.
 
-version = "1.0"
-group= "com.mordenkainen.bedpatch" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "bedpatch"
-
 sourceCompatibility = targetCompatibility = "1.6" // Need this here so eclipse task generates correctly.
 compileJava {
     sourceCompatibility = targetCompatibility = "1.6"
@@ -31,6 +27,10 @@ minecraft {
     mappings = "snapshot_20161111"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
+
+version = "1.0" + "-" + project.minecraft.version
+group= "com.mordenkainen.bedpatch" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "bedpatch"
 
 jar {
     manifest {
