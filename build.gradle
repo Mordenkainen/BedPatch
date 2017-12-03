@@ -10,11 +10,6 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the nessasary things for Forge to be setup.
 
-
-version = "1.0"
-group= "com.mordenkainen.bedpatch" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "bedpatch"
-
 sourceCompatibility = targetCompatibility = "1.8" // Need this here so eclipse task generates correctly.
 compileJava {
     sourceCompatibility = targetCompatibility = "1.8"
@@ -33,11 +28,26 @@ minecraft {
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
+version = "1.0" + "-" + project.minecraft.version
+group= "com.mordenkainen.bedpatch" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "bedpatch"
+
 jar {
     manifest {
         attributes 'FMLCorePlugin': 'com.mordenkainen.bedpatch.BedPatch',
                    'FMLCorePluginContainsFMLMod': 'true'    }
 }
+
+task signJar(type: SignJar, dependsOn: reobfJar) {
+    alias = project.alias
+    storePass = project.storePass
+    keyPass = project.keyPass
+    keyStore = project.keyStore
+    inputFile = jar.archivePath
+    outputFile = jar.archivePath
+}
+
+build.dependsOn signJar
 
 dependencies {
     // you may put jars on which you depend on in ./libs
