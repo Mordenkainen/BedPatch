@@ -18,6 +18,7 @@ compileJava {
 minecraft {
     version = "1.10.2-12.18.3.2511"
     runDir = ".minecraft"
+    coreMod="com.mordenkainen.bedpatch.BedPatch"
     
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
