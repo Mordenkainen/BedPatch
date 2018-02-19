@@ -25,7 +25,7 @@ public class BedPatch implements IFMLLoadingPlugin {
 
     @Override
     public String[] getASMTransformerClass() {
-        return new String[] { BedPatchASM.class.getName() };
+        return new String[] { "com.mordenkainen.bedpatch.BedPatchASM" };
     }
 
     @Override
