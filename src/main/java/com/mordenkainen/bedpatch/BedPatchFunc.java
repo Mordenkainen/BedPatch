@@ -9,6 +9,7 @@ import net.minecraft.util.ClassInheritanceMultiMap;
 import net.minecraft.world.World;
 
 public class BedPatchFunc {
+	
     public static void onChunkUnload(World world, ClassInheritanceMultiMap<Entity>[] entityLists) {
         List<EntityPlayer> players = new ArrayList<EntityPlayer>();
         for (ClassInheritanceMultiMap<Entity> classinheritancemultimap : entityLists) {
@@ -20,4 +21,5 @@ public class BedPatchFunc {
             world.updateEntityWithOptionalForce(player, false);
         }
     }
+    
 }

@@ -14,7 +14,7 @@ import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin.MCVersion;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin.TransformerExclusions;
 
 @MCVersion("1.12.2")
-@IFMLLoadingPlugin.SortingIndex(1200)
+@IFMLLoadingPlugin.SortingIndex(1001)
 @TransformerExclusions({"com.mordenkainen.bedpatch.asmhelper"})
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION, serverSideOnly = true, acceptableRemoteVersions = "*", certificateFingerprint = "6bf7527e690fb5e8719b9832bce5000a3e87dfe6")
 public class BedPatch implements IFMLLoadingPlugin {    
