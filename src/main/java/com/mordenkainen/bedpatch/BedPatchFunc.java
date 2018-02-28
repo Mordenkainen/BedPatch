@@ -8,7 +8,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ClassInheritanceMultiMap;
 import net.minecraft.world.World;
 
-public class BedPatchFunc {
+public final class BedPatchFunc {
+	
+	private BedPatchFunc() {}
 	
 	public static void onChunkUnload(final World world, final ClassInheritanceMultiMap<Entity>[] entityLists) {
 		final List<EntityPlayer> players = new ArrayList<EntityPlayer>();
