@@ -13,7 +13,7 @@ public final class BedPatchFunc {
 	private BedPatchFunc() {}
 	
     public static void onChunkUnload(final World world, final ClassInheritanceMultiMap<Entity>[] entityLists) {
-        List<EntityPlayer> players = new ArrayList<EntityPlayer>();
+        final List<EntityPlayer> players = new ArrayList<EntityPlayer>();
         for (final ClassInheritanceMultiMap<Entity> classinheritancemultimap : entityLists) {
             for(final EntityPlayer player : classinheritancemultimap.getByClass(EntityPlayer.class)) {
                 players.add(player);
