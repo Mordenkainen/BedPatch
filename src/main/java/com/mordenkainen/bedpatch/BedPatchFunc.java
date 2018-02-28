@@ -8,16 +8,18 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ClassInheritanceMultiMap;
 import net.minecraft.world.World;
 
-public class BedPatchFunc {
+public final class BedPatchFunc {
 	
-    public static void onChunkUnload(World world, ClassInheritanceMultiMap<Entity>[] entityLists) {
+	private BedPatchFunc() {}
+	
+    public static void onChunkUnload(final World world, final ClassInheritanceMultiMap<Entity>[] entityLists) {
         List<EntityPlayer> players = new ArrayList<EntityPlayer>();
-        for (ClassInheritanceMultiMap<Entity> classinheritancemultimap : entityLists) {
-            for(EntityPlayer player : classinheritancemultimap.getByClass(EntityPlayer.class)) {
+        for (final ClassInheritanceMultiMap<Entity> classinheritancemultimap : entityLists) {
+            for(final EntityPlayer player : classinheritancemultimap.getByClass(EntityPlayer.class)) {
                 players.add(player);
             }
         }
-        for (EntityPlayer player : players) {
+        for (final EntityPlayer player : players) {
             world.updateEntityWithOptionalForce(player, false);
         }
     }
