@@ -10,14 +10,14 @@ import net.minecraft.world.World;
 
 public class BedPatchFunc {
 	
-	public static void onChunkUnload(World world, ClassInheritanceMultiMap<Entity>[] entityLists) {
-        List<EntityPlayer> players = new ArrayList<EntityPlayer>();
-        for (ClassInheritanceMultiMap<Entity> classinheritancemultimap : entityLists) {
-            for(EntityPlayer player : classinheritancemultimap.getByClass(EntityPlayer.class)) {
+	public static void onChunkUnload(final World world, final ClassInheritanceMultiMap<Entity>[] entityLists) {
+		final List<EntityPlayer> players = new ArrayList<EntityPlayer>();
+        for (final ClassInheritanceMultiMap<Entity> classinheritancemultimap : entityLists) {
+            for(final EntityPlayer player : classinheritancemultimap.getByClass(EntityPlayer.class)) {
                 players.add(player);
             }
         }
-        for (EntityPlayer player : players) {
+        for (final EntityPlayer player : players) {
             world.updateEntityWithOptionalForce(player, false);
         }
     }
