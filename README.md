@@ -3,7 +3,7 @@
 Bed Patch fixes the annoying "stuck in bed" bug that has been in Minecraft since around version 1.10. Rather than try to work around the issue, it patches it at its source.
 
 Static code analysis by Codacy:  
-[![Codacy Badge](https://img.shields.io/codacy/grade/524490217a7041dea35d8f334155ea59/master.svg)](https://www.codacy.com/app/Mordenkainen/BedPatch?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Mordenkainen/BedPatch&amp;utm_campaign=Badge_Grade?bid=6659455)
+[![Codacy Badge](https://img.shields.io/codacy/grade/524490217a7041dea35d8f334155ea59/master.svg)](https://www.codacy.com/app/Mordenkainen/BedPatch?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Mordenkainen/BedPatch&amp;utm_campaign=Badge_Grade;bid=6659455)
 
 CI builds by TravisCI:  
 [![Build Status](https://travis-ci.org/Mordenkainen/BedPatch.svg?branch=master)](https://travis-ci.org/Mordenkainen/BedPatch)
