@@ -43,10 +43,10 @@ task signJar(type: SignJar, dependsOn: reobfJar) {
     onlyIf {
         project.hasProperty('keyStore')
     }
-    alias = project.alias
-    storePass = project.storePass
-    keyPass = project.keyPass
-    keyStore = project.keyStore
+    alias = project.findProperty('alias')
+    storePass = project.findProperty('storePass')
+    keyPass = project.findProperty('keyPass')
+    keyStore = project.findProperty('keyStore')
     inputFile = jar.archivePath
     outputFile = jar.archivePath
 }
