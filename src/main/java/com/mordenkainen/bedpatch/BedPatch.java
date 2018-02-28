@@ -39,7 +39,7 @@ public class BedPatch implements IFMLLoadingPlugin {
     }
 
     @Override
-    public void injectData(Map<String, Object> data) {
+    public void injectData(final Map<String, Object> data) {
         ObfHelper.setObfuscated((Boolean) data.get("runtimeDeobfuscationEnabled"));
         ObfHelper.setRunsAfterDeobfRemapper(true);
     }

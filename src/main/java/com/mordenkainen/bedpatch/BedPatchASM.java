@@ -18,7 +18,7 @@ import net.minecraft.launchwrapper.IClassTransformer;
 public class BedPatchASM implements IClassTransformer {
     
     @Override
-    public byte[] transform(String name, String transformedName, byte[] basicClass) {
+    public byte[] transform(final String name, final String transformedName, final byte[] basicClass) {
         if ("net.minecraft.world.chunk.Chunk".equals(transformedName)) {
             BedPatch.logger.info("Patching Chunk");
             final ClassNode classNode = ASMHelper.readClassFromBytes(basicClass);
@@ -29,7 +29,7 @@ public class BedPatchASM implements IClassTransformer {
             insnList.add(new VarInsnNode(Opcodes.ALOAD, 0));
             insnList.add(new FieldInsnNode(Opcodes.GETFIELD, "net/minecraft/world/chunk/Chunk", ObfHelper.isObfuscated() ? "field_76645_j" : "entityLists", "[Lnet/minecraft/util/ClassInheritanceMultiMap;"));
             insnList.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "com/mordenkainen/bedpatch/BedPatchFunc", "onChunkUnload", "(Lnet/minecraft/world/World;[Lnet/minecraft/util/ClassInheritanceMultiMap;)V", false));
-            AbstractInsnNode insert = ASMHelper.findFirstInstruction(method);
+            final AbstractInsnNode insert = ASMHelper.findFirstInstruction(method);
             method.instructions.insertBefore(insert, insnList);
             
             return ASMHelper.writeClassToBytes(classNode, ClassWriter.COMPUTE_FRAMES);
